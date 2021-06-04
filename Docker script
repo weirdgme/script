@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# Description: this script is design to build Docker images
+# Author: Bereziwe Miza #Date: january 2020
 
 echo " what image do you want to build "
 read IMAGE
