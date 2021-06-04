@@ -32,7 +32,7 @@ then
 echo " RUN ${COMMAND2} " >>  Dockerfile
 fi
 
-if [ -z COMMAND1 ]
+if [ -z COMMAND3 ]
 then
 echo " RUN ${COMMAND3} " >> Dockerfile
 if [ -z COMMAND1 ]
@@ -40,12 +40,12 @@ then
 echo " RUN ${COMMAND3} " >> Dockerfile
 fi
 
-if [ -z COMMAND1 ]
+if [ -z COMMAND4 ]
 then
 echo " RUN ${COMMAND4} " >> Dockerfile
 fi
 
-if [ -z COMMAND1 ]
+if [ -z COMMAND5 ]
 then
 echo " RUN ${COMMAND5} " >> Dockerfile
 fi
