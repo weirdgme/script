@@ -1,0 +1,67 @@
+#!/bin/bash
+
+
+echo " what image do you want to build "
+read IMAGE
+echo " who is building the image "
+read NAME
+echo "what commands do you wnat to run ?"
+read COMMAND1
+read COMMAND2
+read COMMAND3
+read COMMAND4
+read COMMAND5
+
+echo "what file do you want to copy "
+read FILE1
+echo "what file are you copying into "
+read FILE2
+
+touch Dockerfile
+
+echo " FROM ${IMAGE} " > Dockerfile
+echo " MAINTAINER ${NAME} " >>  Dockerfile
+
+if [ -z COMMAND1 ]
+then
+echo " RUN ${COMMAND1} " >> Dockerfile
+fi
+
+if [ -z COMMAND2 ]
+then
+echo " RUN ${COMMAND2} " >>  Dockerfile
+fi
+
+if [ -z COMMAND1 ]
+then
+echo " RUN ${COMMAND3} " >> Dockerfile
+if [ -z COMMAND1 ]
+then
+echo " RUN ${COMMAND3} " >> Dockerfile
+fi
+
+if [ -z COMMAND1 ]
+then
+echo " RUN ${COMMAND4} " >> Dockerfile
+fi
+
+if [ -z COMMAND1 ]
+then
+echo " RUN ${COMMAND5} " >> Dockerfile
+fi
+
+echo " EXPOSE 80 " >> Dockerfile
+echo " COPY ./${FILE1} ${FILE2} " >> Dockerfile
+echo " CMD apachectl -D FOREGROUND " >> Dockerfile
+
+echo "what is your docker registry username? "
+read USERNAME
+
+echo " what is your image name "
+read INAME
+
+docker build -t ${USERNAME}_${INAME} .
+
+#if [[ $? -eq 0 ]];
+#then
+#rm -f Dockerfile
